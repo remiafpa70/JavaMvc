@@ -5,7 +5,8 @@
  */
 package com.mycompany.testcreaapi;
 
-import com.philou.cda.swing.TestSwing;
+import com.mycompany.testcreaapi.collections.TestList;
+import com.remi.tp.streams.TestListStream;
 
 /**
  *
@@ -15,7 +16,7 @@ public class NewMain {
     
     public static void main(String[]args){
         
-        TestSwing.perform();
+        TestListStream.perform();
         
     }
     

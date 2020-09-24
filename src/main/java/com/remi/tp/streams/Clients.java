@@ -1,5 +1,6 @@
-package com.mycompany.testcreaapi.collections;
+package com.remi.tp.streams;
 
+import com.mycompany.testcreaapi.collections.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -8,49 +9,49 @@ import java.util.List;
  *
  * @author philou
  */
-public class Personne {
+public class Clients {
     
     private String nom;
-    private int pointsFidelite; 
-    private Personne conjoint;
-    private List<Personne> listeAmis;
+    private Integer pointsFidelite; 
+    //private Clients conjoint;
+   // private List<Clients> listeAmis;
 
-    public Personne(String nom) {
+    public Clients(String nom) {
         this.nom = nom;
-        conjoint = null;
-        listeAmis = new ArrayList(); // LinkedList       
+      //  conjoint = null;
+      //  listeAmis = new ArrayList(); // LinkedList       
     }
-    public Personne(String nom, int pointsFidelite) {
+    public Clients(String nom, int pointsFidelite) {
         this.nom = nom;
         this.pointsFidelite = pointsFidelite;
-        conjoint = null;
-        listeAmis = new ArrayList(); // LinkedList       
+      //  conjoint = null;
+      //  listeAmis = new ArrayList(); // LinkedList       
     }
     
-    public void marriage(Personne p){
+    /* public void marriage(Clients p){
         
         // On vérifie le célibat
-        if(this.getConjoint() == null && p.getConjoint() == null){
+       if(this.getConjoint() == null && p.getConjoint() == null){
             this.setConjoint(p);
             p.setConjoint(this);
         }
         
     }
     
-    public void divorce(Personne p){
+    public void divorce(Clients p){
         
         // Déjà marrié ? Avec la bonne personne ?
-        if(this.getConjoint() != null && this.getConjoint() == p){
+      /*  if(this.getConjoint() != null && this.getConjoint() == p){
             this.setConjoint(null);
             p.setConjoint(null);
         }
         
     }
     
-    public void gagneAmi(Personne nouvelAmi){
+    public void gagneAmi(Clients nouvelAmi){
         
         // N'est pas déjà son ami ?
-        if(!getListeAmis().contains(nouvelAmi)){ 
+       /* if(!getListeAmis().contains(nouvelAmi)){ 
             
             getListeAmis().add(nouvelAmi);
             nouvelAmi.getListeAmis().add(this);
@@ -60,14 +61,14 @@ public class Personne {
         }
     }
     
-    public void perdAmi(Personne ancienAmi){
+    public void perdAmi(Clients ancienAmi){
         
         // Ils sont déjà amis ?
         
         // PRESOMPTUEUX ! (pas bien)
         // if(getListeAmis().contains(ancienAmi) ){
         
-        if(getListeAmis().contains(ancienAmi) && ancienAmi.getListeAmis().contains(this)){ 
+        /*if(getListeAmis().contains(ancienAmi) && ancienAmi.getListeAmis().contains(this)){ 
             getListeAmis().remove(ancienAmi);
             ancienAmi.getListeAmis().remove(this);
         }
@@ -93,28 +94,28 @@ public class Personne {
     /**
      * @return the conjoint
      */
-    public Personne getConjoint() {
+    /*public Clients getConjoint() {
         return conjoint;
     }
 
     /**
      * @param conjoint the conjoint to set
      */
-    public void setConjoint(Personne conjoint) {
-        this.conjoint = conjoint;
+    /*public void setConjoint(Clients conjoint) {
+        /*    this.conjoint = conjoint;
     }
 
     /**
      * @return the listeAmis
      */
-    public List<Personne> getListeAmis() {
+        /*public List<Clients> getListeAmis() {
         return listeAmis;
     }
 
     /**
      * @param listeAmis the listeAmis to set
      */
-    public void setListeAmis(List<Personne> listeAmis) {
+    /*public void setListeAmis(List<Clients> listeAmis) {
         this.listeAmis = listeAmis;
     }
     
@@ -135,7 +136,7 @@ public class Personne {
         
         retour += " Amis (" + this.listeAmis.size() + ") = ";
         
-        Iterator<Personne> it = this.getListeAmis().iterator();
+        Iterator<Clients> it = this.getListeAmis().iterator();
         
         while(it.hasNext())
             retour += it.next().getnom() + ", ";

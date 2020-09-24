@@ -42,21 +42,21 @@ public class Personne {
     }
 
     /**
-     * @return the listePersonnes
+     * @return the listeClients
      */
-    public List<Personne> getListePersonnes() {
-        return listePersonnes;
+    public List<Personne> getlisteClients() {
+        return listeClients;
     }
 
     /**
-     * @param listePersonnes the listePersonnes to set
+     * @param listeClients the listeClients to set
      */
-    public void setListePersonnes(List<Personne> listePersonnes) {
-        this.listePersonnes = listePersonnes;
+    public void setlisteClients(List<Personne> listeClients) {
+        this.listeClients = listeClients;
     }
     private boolean celibataire;
     private boolean divorce;
-        private List<Personne> listePersonnes;
+        private List<Personne> listeClients;
 
 
     

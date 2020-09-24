@@ -1,5 +1,6 @@
-package com.mycompany.testcreaapi.collections;
+package com.remi.tp.streams;
 
+import com.mycompany.testcreaapi.collections.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -11,7 +12,7 @@ import java.util.stream.Collectors;
  *
  * @author philou
  */
-public class TestList {
+public class TestListStream {
     
     
     
@@ -19,18 +20,18 @@ public class TestList {
     public static void perform(){
         
         List<Integer>  listePointsFidelite = new ArrayList(); // wrapper classe       
-        List<Personne>  listeClients = new ArrayList(); 
+        List<Clients>  listeClients = new ArrayList(); 
         
         // Feeding listePointsFidelite
         for(int i=0; i<10; i++){
-        listePointsFidelite.add(random(0,100));
+        listePointsFidelite.add(random(0,10000));
         }
         
         // Feeding listeClients
-        for(int i=0; i<10; i++){
-            //Personne p = new Personne("Personne"+i, random(0,1000));
+        for(int i=0; i<100; i++){
+            //Personne p = new Clients("Clients"+i, random(0,1000));
             //listeClients.add(p);
-            listeClients.add(new Personne("Personne"+i, random(0,1000)));
+            listeClients.add(new Clients("Client "+i, random2(0,100)));
         }
         
         System.out.println("1-**************************************************");
@@ -41,18 +42,18 @@ public class TestList {
         }
         
         for(int i=0; i<listeClients.size(); i++){
-            System.out.print("Prénom = " + listeClients.get(i).getnom());
-            System.out.println(" Capital = " + listeClients.get(i).getpointsFidelite());
+            System.out.print("Client = " + listeClients.get(i).getnom());
+            System.out.println(" Points Fidélité = " + listeClients.get(i).getpointsFidelite());
         }
         
         
-        System.out.println("2-**************************************************");
+/*       System.out.println("2-**************************************************");
 
         for(int nb : listePointsFidelite){
             System.out.println(nb);
         }
         
-        for(Personne p : listeClients){
+        for(Clients p : listeClients){
             System.out.print("Prénom = " + p.getnom());
             System.out.println(" Capital = " + p.getpointsFidelite());
         }
@@ -61,14 +62,14 @@ public class TestList {
 
         Iterator<Integer> itNumbers = listePointsFidelite.iterator();
         
-        Iterator<Personne> itPersonnes = listeClients.iterator();
+        Iterator<Clients> itPersonnes = listeClients.iterator();
         
         while(itNumbers.hasNext()){
             System.out.println(itNumbers.next());
         }
         
         while(itPersonnes.hasNext()){
-            Personne p = itPersonnes.next();
+            Clients p = itPersonnes.next();
             System.out.print("Prénom = " + p.getnom());
             System.out.println(" Capital = " + p.getpointsFidelite());
         }        
@@ -104,7 +105,7 @@ public class TestList {
                 .filter( n -> n > 50)
                 .collect(Collectors.toList());
 
-        System.out.println(listePointsFideliteBeyondFifty);
+        System.out.println(listePointsFideliteBeyondFifty);*/
         
         System.out.println("6 -**************************************************");
         
@@ -120,10 +121,10 @@ public class TestList {
     
 //---------------------------------------------------------------------------  
     
-    public static void perform2(){
+   /* public static void perform2(){
         
         List<Integer>  listePointsFidelite = new ArrayList(); // wrapper classe       
-        List<Personne>  listeClients = new ArrayList(); 
+        List<Clients>  listeClients = new ArrayList(); 
         
         // Feeding listePointsFidelite
         for(int i=0; i<10; i++){
@@ -132,19 +133,19 @@ public class TestList {
         
         // Feeding listeClients
         for(int i=0; i<10; i++){
-            //Personne p = new Personne("Personne"+i, random(0,1000));
+            //Personne p = new Clients("Clients"+i, random(0,1000));
             //listeClients.add(p);
-            listeClients.add(new Personne("Personne"+i, random(0,1000)));
+            listeClients.add(new Clients("Personne"+i, random(0,1000)));
         }
         
         // 1- Tri listeClients avec Collections.sort ==> objet dédié !!!
         // Collections.sort(listeClients,  new ComparePersonne()     );
         
         // 2- Tri listeClients avec Collections.sort ==> utilisation d'une classe anonyme
-        Collections.sort(listeClients,  new Comparator<Personne>(){
+        Collections.sort(listeClients,  new Comparator<Clients>(){
     
             @Override
-            public int compare(Personne p1, Personne p2) {
+            public int compare(Clients p1, Clients p2) {
         
             if(p1.getpointsFidelite() > p2.getpointsFidelite()){
             return 1;
@@ -177,10 +178,15 @@ public class TestList {
                 .forEach(   p -> {System.out.println(p.getpointsFidelite());}   );
         
         
-    }
+    }*/
     
 //---------------------------------------------------------------------------
     private static int random(double min, double max){
+        return (int)((Math.random() * ( max - min+1 )) + min); 
+    }
+    
+    //---------------------------------------------------------------------------
+    private static int random2(double min, double max){
         return (int)((Math.random() * ( max - min+1 )) + min); 
     }
 
